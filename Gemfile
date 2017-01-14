@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'gravatarify', '~> 3.0.0'
 
 gem 'devise'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug'
