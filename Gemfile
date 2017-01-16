@@ -16,6 +16,7 @@ gem 'gravatarify', '~> 3.0.0'
 
 gem 'devise'
 gem 'toastr-rails'
+gem 'mandrill-api'
 
 group :development, :test do
   gem 'byebug'

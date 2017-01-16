@@ -45,8 +45,9 @@ Rails.application.configure do
     address: 'smtp.mandrillapp.com',
     port: 587,
     enable_starttls_auto: true,
-    user_name: 'matteo.soresini@hotmail.it',
+    user_name: 'web developer',
     password: 'P9CXSs4rVPqbbMDBMWYyPA',
     authentication: 'login'
   }
+
 end

@@ -63,6 +63,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
+    excon (0.54.0)
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -80,6 +81,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -171,6 +175,7 @@ DEPENDENCIES
   gravatarify (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mandrill-api
   rails (= 4.2.1)
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
