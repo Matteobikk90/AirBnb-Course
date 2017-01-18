@@ -17,6 +17,8 @@ gem 'gravatarify', '~> 3.0.0'
 gem 'devise'
 gem 'toastr-rails'
 gem 'mandrill-api'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'
