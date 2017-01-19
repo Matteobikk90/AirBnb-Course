@@ -12,7 +12,7 @@ one:
   is_tv: false
   is_kitchen: false
   is_air: false
-  is_heating_boolean: MyString
+  is_heating: false
   is_internet: false
   price: 1
   active: false
@@ -30,7 +30,7 @@ two:
   is_tv: false
   is_kitchen: false
   is_air: false
-  is_heating_boolean: MyString
+  is_heating: false
   is_internet: false
   price: 1
   active: false
