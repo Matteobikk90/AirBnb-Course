@@ -14,11 +14,12 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 gem 'gravatarify', '~> 3.0.0'
 
-gem 'devise'
+gem 'devise', '~> 4'
 gem 'toastr-rails'
 gem 'mandrill-api'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'byebug'
