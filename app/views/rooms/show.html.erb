@@ -134,14 +134,7 @@
 
 				<div id="map"></div>
 
-					<style>
-					#map {
-					width: 100%;
-					height: 400px;
-					}
-					</style>
-
-					<script>
+				<script>
 					function initMap() {
 					var uluru = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
 					var map = new google.maps.Map(document.getElementById('map'), {
@@ -156,10 +149,26 @@
 					</script>
 
 					<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOKH_eOYVizmeBYss0f6WF__E6oetbnSg&callback=initMap">
-    </script>
+				</script>
 			</div>
 		</div>
 
+		<!-- Close by Rooms -->
+		<h3>Near by</h3>
+		<div class="row">
+			<% for room in @room.nearbys(10) %>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag room.photos[0].image.url(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to room.listing_name, room %><br>(<%= room.distance.round(2) %> miles away)
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
 
 	</div>
 </div>
