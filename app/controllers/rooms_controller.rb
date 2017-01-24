@@ -28,6 +28,7 @@ class RoomsController < ApplicationController
       @photos = @room.photos
       redirect_to edit_room_path(@room), notice: "Saved..."
     else
+      flash[:alert] = "Please provide all information for this room, included a photo."
       render :new
     end
   end
@@ -51,6 +52,7 @@ class RoomsController < ApplicationController
 
       redirect_to edit_room_path(@room), notice: "Updated..."
     else
+      flash[:alert] = "Please provide all information for this room, included a photo."
       render :edit
     end
   end
