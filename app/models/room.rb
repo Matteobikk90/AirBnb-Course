@@ -1,7 +1,7 @@
 class Room < ActiveRecord::Base
   belongs_to :user
   has_many :photos
-  has_many :reservations
+  has_many :bookings
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

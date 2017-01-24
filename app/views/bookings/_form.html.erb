@@ -1,0 +1,22 @@
+<%= form_for([@room, @room.bookings.new]) do |f| %>
+	<%= f.text_field :start_date, placeholder: "Start Date" %>
+	<%= f.text_field :end_date, placeholder: "End Date" %>
+	<%= f.hidden_field :room_id, value: @room.id %>
+	<%= f.hidden_field :price, value: @room.price %>
+	<br>
+	<%= f.submit "Book Now", class: "btn btn-primary" %>
+<% end %>
+
+
+<script>
+	$(document).ready(function() {
+
+		$('#booking_start_date').datepicker({
+			dateFormat: 'dd-mm-yy'
+			});
+		$('#booking_end_date').datepicker({
+			dateFormat: 'dd-mm-yy'
+			});
+
+	});
+</script>
