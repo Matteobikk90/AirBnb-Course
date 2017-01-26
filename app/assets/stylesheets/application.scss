@@ -223,18 +223,12 @@ input[type="checkbox"]:checked:before {
 }
 
 .img-responsive {
-    display: block;
-    /* max-width: 100%; */
-    height: auto;
-    width: 100%;
+    width: 75%;
+    margin-left: 12.5%;
 }
 
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    display: block;
-    max-width: 100%;
-    height: auto;
     width: 100%;
-    line-height: 1;
 }
 
 #map {
