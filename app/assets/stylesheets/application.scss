@@ -222,10 +222,39 @@ input[type="checkbox"]:checked:before {
   text-decoration: line-through;
 }
 
+.img-responsive {
+    display: block;
+    /* max-width: 100%; */
+    height: auto;
+    width: 100%;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    line-height: 1;
+}
+
 #map {
   width: 100%;
   height: 400px;
 }
+
+.reservation_table {
+  width: 100%;
+  border: 1px solid #dce0e0;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
 
 
 
