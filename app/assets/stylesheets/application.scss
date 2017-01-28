@@ -9,7 +9,8 @@ body {
 }
 
 .container {
-	width: 80%;
+	width: 86%;
+  /*width: 90%;*/
 }
 
 .navbar-default {
@@ -242,7 +243,9 @@ input[type="checkbox"]:checked:before {
   padding: 10px;
 }
 
-
+.wide {
+  width: 100%;
+}
 
 
 
