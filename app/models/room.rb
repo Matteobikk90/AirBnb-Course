@@ -16,4 +16,12 @@ class Room < ActiveRecord::Base
   validates :summary, presence: true, length: {maximum: 500}
   validates :address, presence: true
   
+  # def show_first_photo(size)
+  #   if self.photos.length == 0
+  #     'http://img.astaingriglia.com/all/no_image.jpg'
+  #   else
+  #     self.photos[0].image.url(size)
+  #   end
+  # end
+
 end
