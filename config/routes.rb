@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   resources :photos
 
   resources :rooms do
-  resources :bookings, only: [:create]
+    resources :bookings, only: [:create]
   end
 
   resources :conversations, only: [:index, :create] do
-    resources :messages; only: [:index, :create]
+    resources :messages, only: [:index, :create]
   end
 
   get '/preload' => 'bookings#preload'

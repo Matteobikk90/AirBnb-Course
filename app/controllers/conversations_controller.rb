@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
 
 	def index
 		@users = User.all
-		@conversations = Conversation.involving(current_user)		
+		@conversations = Conversation.involving(current_user)
 	end
 
 	def create
@@ -13,9 +13,8 @@ class ConversationsController < ApplicationController
 			@conversation = Conversation.create(conversation_params)
 		end
 
-		redirect_to conversation_message_path(@conversation)
+		redirect_to conversation_messages_path(@conversation)
 	end
-
 
 	private
 
