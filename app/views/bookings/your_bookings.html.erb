@@ -14,7 +14,8 @@
 			<div class="panel-body">
 
 				<% @rooms.each do |room| %>
-					<% @bookings.each do |booking| %>
+
+					<% room.bookings.each do |booking| %>
 					<div class="row">
 						<div class="col-md-2">
 							<%= booking.start_date.strftime('%v') %>
@@ -30,7 +31,7 @@
 							<% end %>
 						</div>
 						<div class="col-md-2 right">
-							<h4>$<%= trip.total %></h4>
+							<h4>$<%= booking.total %></h4>
 						</div>
 					</div>
 					<hr>

@@ -57,6 +57,14 @@ class RoomsController < ApplicationController
     end
   end
 
+  # def show_first_photo(size)
+  #     if self.photos.length == 0
+  #       'http://kermisland.be/wp-content/uploads/2015/11/no-image.png'
+  #     else
+  #       self.photos[0].image.url(size)
+  #     end
+  # end
+
   private
     def set_room
       @room = Room.find(params[:id]) 
