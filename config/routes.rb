@@ -30,4 +30,7 @@ Rails.application.routes.draw do
   get 'your_trips' => 'bookings#your_trips'
   get 'your_bookings' => 'bookings#your_bookings'
 
+  post '/notify' => 'bookings#notify'
+  post '/your_trips' => 'bookings#your_trips'
+
 end

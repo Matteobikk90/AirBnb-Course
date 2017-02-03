@@ -1,15 +1,49 @@
 class BookingsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:notify]
 
 	def create
-		room = Room.find(params[:room_id])
-		
-		if  current_user == room.user
-				redirect_to room, error: "You can't reserve your own room!"
+		@booking = current_user.bookings.create(booking_params)
+
+		if @booking
+			# send resquest to paypal
+			values = {
+				business: 'matteo.soresini90-facilitator@gmail.com',
+				cmd: '_xclick',
+				upload: 1,
+				notify_url: 'http://01877ba1.ngrok.io/notify',
+				amount:@booking.total,
+				item_name: @booking.room.listing_name,
+				item_number: @booking.id,
+				quantity: '1',
+				return: 'http://01877ba1.ngrok.io/your_trips'
+			}
+			redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
 		else
-			@booking = current_user.bookings.create(booking_params)
-				redirect_to @booking.room, notice: "Your booking has been created!"
+			redirect_to @booking.room, alert: "Ops, something went wrong..."
 		end
+		
+		# if  current_user == room.user
+		# 		redirect_to room, error: "You can't reserve your own room!"
+		# else
+		# 	@booking = current_user.bookings.create(booking_params)
+		# 		redirect_to @booking.room, notice: "Your booking has been created!"
+		# end
+	end
+
+	protect_from_forgery except: [:notify]
+	def notify
+		params.permit!
+		status = params[:payment_status]
+
+		booking = Booking.find(params[:item_number])
+
+		if status = "Completed"
+			booking.update_attributes status: true
+		else
+			booking.destroy
+		end
+
+		render nothing: true
 	end
 
 	def preload
@@ -31,8 +65,9 @@ class BookingsController < ApplicationController
 		render json: output
 	end
 
+	protect_from_forgery except: [:your_trips]
 	def your_trips
-		@trips = current_user.bookings
+		@trips = current_user.bookings.where("status = ?", true)
 	end
 
 	def your_bookings
