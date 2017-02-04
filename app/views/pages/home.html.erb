@@ -17,7 +17,7 @@
 
 <div class="row">
 	<% @rooms.each do |room| %>
-
+		
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading preview">
@@ -28,12 +28,13 @@
 				</div>
 			</div>
 		</div>
+
 	<% end %>
 </div>
 
 <script>
 	$(function() {
-		$('#start_date').datepicker({
+		$("#start_date").datepicker({
 			dateFormat: 'dd-mm-yy',
 			minDate: 0,
 			maxDate: '3m',
@@ -43,7 +44,7 @@
 			}
 		});
 
-		$('#end_date').datepicker({
+		$("#end_date").datepicker({
 			dateFormat: 'dd-mm-yy',
 			minDate: 0,
 			maxDate: '3m',
@@ -51,8 +52,7 @@
 				$('#start_date').datepicker("option", "maxDate", selected);
 			}
 		});
-	});
+	})
+
+
 </script>
-
-
-

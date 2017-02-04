@@ -25,6 +25,7 @@ gem  'geocoder'
 gem 'jquery-ui-rails'
 gem 'private_pub'
 gem 'thin'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug'
