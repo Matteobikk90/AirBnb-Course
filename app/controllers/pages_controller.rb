@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 
   		@rooms.each do |room|
 
-  			not_available = room.reservations.where(
+  			not_available = room.bookings.where(
   					"(? <= start_date AND start_date <= ?)
   					OR (? <= end_date AND end_date <= ?) 
   					OR (start_date < ? AND ? < end_date)",
